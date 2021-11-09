@@ -1,3 +1,3 @@
 /** @ts_check */
 
-console.log('hi')
+console.log('hihihi')
