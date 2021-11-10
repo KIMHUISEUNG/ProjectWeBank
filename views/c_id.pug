@@ -1,7 +1,13 @@
 //create id
-extends layout 
 
-block content 
-    h1 
-        a(href='/') WeBank
-    
+doctype html
+html
+  head
+    title WeBank
+  body
+    div
+        img(scr="scr/public/images/LOGO/webank_logo_1.png")
+        h1 회원가입
+    div 
+        |아이디
+        input(type='text' name='id' required='' minlength='4' maxlength='8' size'10)
