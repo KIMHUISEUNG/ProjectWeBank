@@ -3,6 +3,15 @@ html
         link(rel="stylesheet", href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css")
     body 
         form
-            div.p-12 #{title}
-                input(type="text", placeholder="검색")
-                button.bg-black-600  보내기
+            div 
+                text.mr-80.ml-8.my-8 #{title}
+                input.ml-80.mr-2.my-8.felx-1.border.border-gray-200.p-2(type="text", placeholder="검색")
+                button.mr-8.bg-blue-600.text-white.p-2.rounded 보내기
+        div
+            img.ml-16.my-8(src="public/images/pages/event_page.png", alt="eventimg")
+            text.ml-16 장르별 TOP 10
+        div.ml-16
+            button.mx-4.p-2.bg-blue-600.text-white.p-2.rounded 로맨스
+            button.mx-4.p-2.bg-blue-600.text-white.p-2.rounded 판타지
+            button.mx-4.p-2.bg-blue-600.text-white.p-2.rounded 힐링
+            button.mx-4.p-2.bg-blue-600.text-white.p-2.rounded 무협
