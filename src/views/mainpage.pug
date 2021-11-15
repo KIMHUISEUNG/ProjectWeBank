@@ -4,14 +4,34 @@ html
     body 
         form
             div 
-                text.mr-80.ml-8.my-8 #{title}
-                input.ml-80.mr-2.my-8.felx-1.border.border-gray-200.p-2(type="text", placeholder="검색")
-                button.mr-8.bg-blue-600.text-white.p-2.rounded 보내기
+                text.mr-44.ml-16.my-8 #{title}
+                input.ml-48.mr-2.my-8.felx-1.border.border-gray-200.p-2(type="text", placeholder="검색")
+                button.mr-2.bg-blue-600.text-white.p-2.rounded 보내기
+                button.mr-2.bg-blue-600.text-white.p-2.rounded 로그인
+                button.bg-blue-600.text-white.p-2.rounded 회원가입
         div
             img.ml-16.my-8(src="public/images/pages/event_page.png", alt="eventimg")
-            text.ml-16 장르별 TOP 10
-        div.ml-16
-            button.mx-4.p-2.bg-blue-600.text-white.p-2.rounded 로맨스
-            button.mx-4.p-2.bg-blue-600.text-white.p-2.rounded 판타지
-            button.mx-4.p-2.bg-blue-600.text-white.p-2.rounded 힐링
-            button.mx-4.p-2.bg-blue-600.text-white.p-2.rounded 무협
+            text.ml-16 장르 TOP 10
+        div.my-4
+            div.ml-16
+                button.mr-4.p-3.w-44.bg-blue-600.text-white.rounded 로맨스
+                button.mx-4.p-3.w-44.bg-blue-600.text-white.rounded 판타지
+                button.mx-4.p-3.w-44.bg-blue-600.text-white.rounded 힐링
+                button.ml-4.p-3.w-44.bg-blue-600.text-white.rounded 무협
+
+            div.ml-16.flex-row
+                img.w-32.my-2.mr-1.float-left(src="public/images/naver/n_전지적_독자시점.png")
+                img.w-32.my-2.mr-1.float-left(src="public/images/naver/n_백수세끼.png")
+                img.w-32.my-2.mr-1.float-left(src="public/images/naver/n_연애혁명.png")
+                img.w-32.my-2.mr-1.float-left(src="public/images/kakao/k_백작가의_망나니가_되었다.png")
+                img.w-32.my-2.mr-1.float-left(src="public/images/kakao/k_칼집의_아이.png")
+                img.w-32.my-2(src="public/images/kakao/k_8클래스_마법사의_회귀.png")
+
+        div
+            div
+                text.ml-16 연재처 TOP 10
+            div.ml-16
+                button.mr-4.p-3.w-44.bg-blue-600.text-white.rounded 카카오
+                button.mx-4.p-3.w-44.bg-blue-600.text-white.rounded 카카오페이지
+                button.mx-4.p-3.w-44.bg-blue-600.text-white.rounded 네이버
+                button.ml-4.p-3.w-44.bg-blue-600.text-white.rounded 레진코믹스
