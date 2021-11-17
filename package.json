@@ -1,9 +1,13 @@
 {
   "scripts": {
     "test": "jest",
-    "server": "nodemon src/main.js"
+    "server": "nodemon --exec babel-node src/app.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "nodemon": "^2.0.15",
     "@types/node": "^16.11.6",
     "eslint": "^8.1.0",
     "eslint-config-airbnb-base": "^14.2.1",
