@@ -17,6 +17,7 @@ app.set('views', process.cwd() + '/src/views')
 app.set('view engine', 'pug')
 
 app.use('/public', express.static('src/public'))
+// this work is JMT...
 
 app.use('/', mainRouter)
 app.use('/user', userRouter)
