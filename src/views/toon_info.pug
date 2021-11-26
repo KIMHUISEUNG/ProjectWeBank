@@ -1,4 +1,33 @@
 extends base.pug
 
 block content
-    h1 Toon Infomation
+    h1
+        a(href='/') WeBank
+    div(style='margin-bottom: 30px;')
+        div
+            img(src="public/images/kakao/k_악녀의_남주님.png" width='300' height='300')
+        div
+            div
+            h3(style='margin-bottom: 6px;') 툰 제목 | 작가 | 알림종 이미지
+            div
+            h3(style='margin-bottom: 6px;') 평점 (평점 남긴 수)
+            span ★
+            |  평점
+            div
+            h3(style='margin-bottom: 6px;') 키워드
+            |         키워드 줄줄이
+            div(style='height: 50px;')
+            h3(style='margin-bottom: 6px;') 줄거리
+            |         이 곳에 줄거리를 적어주세요.
+            div
+            h3(style='margin-bottom: 6px;') 연재처
+            |         네이버 카카오페이지
+
+    div(style='margin-top: 50px;')
+        h2 comment
+            div
+                |댓글들이 줄줄이
+    
+    div
+        h2 비슷한 작품    
+    p test page description is ...

@@ -1,9 +1,15 @@
 import express from 'express'
-import { upload, info, edit, deleteToon } from '../controllers/toonController'
+import {
+  getUpload,
+  postsUpload,
+  info,
+  edit,
+  deleteToon,
+} from '../controllers/toonController'
 
 const toonRouter = express.Router()
 
-toonRouter.get('/upload', upload)
+toonRouter.route('/upload').get(getUpload).post(postsUpload)
 toonRouter.get('/:id(\\d+)', info)
 toonRouter.get('/:id(\\d+)/edit', edit)
 toonRouter.get('/:id(\\d+)/delete', deleteToon)

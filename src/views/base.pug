@@ -2,6 +2,10 @@ doctype html
 html(lang="ko")
     head 
         title WeBank | #{pageTitle}
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css")
     body 
-        block content
+        header 
+            img(src="public/images/naver/n_전지적_독자시점.png") 
+        main
+            block content
     include partials/footer.pug
