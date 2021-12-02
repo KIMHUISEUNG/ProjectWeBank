@@ -1,0 +1,10 @@
+mixin webtoon(webtoon)
+    div
+        h4
+            a(href=`/toon/${webtoon.id}`)=webtoon.title
+        p=webtoon.description
+        ul
+            each hashtag in webtoon.hashtags
+                li=hashtag
+        small=webtoon.createdAt
+        hr

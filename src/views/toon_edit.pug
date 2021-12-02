@@ -2,3 +2,17 @@ extends base.pug
 
 block content
     h1 Edit webtoon's infomation
+    form(method="POST") 
+        |제목
+        input(name="title", value=toon.title, required)
+        |작가
+        input(name="writer", value=toon.writer, required)
+        |줄거리
+        input(name="plot", type="text",  value=toon.plot, required)
+        |키워드
+        input(name="hashtags", type="text", value=toon.hashtags.join(), required)
+        small 쉼표(,)로 표시해 주세요 
+
+        |플랫폼
+        input(name="platform", type="text", value=toon.platform.join(), required)
+        input(value="Save", type="submit")

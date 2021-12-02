@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "jest",
-    "server": "nodemon --exec babel-node src/app.js"
+    "server": "nodemon --exec babel-node src/init.js"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -20,6 +20,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^6.0.13",
+    "morgan": "^1.10.0",
     "pug": "^3.0.2",
     "tailwindcss": "^2.2.19"
   }

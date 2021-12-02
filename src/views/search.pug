@@ -1,0 +1,12 @@
+extends base
+include mixins/webtoon
+
+block content
+    form(method="GET")
+        input(placeholder="Search by title", name="keyword" type="text")
+        input(type="submit", value="search now")
+    
+    div 
+        each webtoon in toons
+            +webtoon(webtoon)
+    

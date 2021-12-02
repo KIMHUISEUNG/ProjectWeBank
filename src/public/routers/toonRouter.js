@@ -1,18 +1,19 @@
 import express from 'express'
 import {
-  getUpload,
-  postsUpload,
   info,
-  edit,
+  getUpload,
+  postUpload,
+  getEdit,
+  postEdit,
   deleteToon,
 } from '../controllers/toonController'
 
 const toonRouter = express.Router()
 
-toonRouter.route('/upload').get(getUpload).post(postsUpload)
-toonRouter.get('/:id(\\d+)', info)
-toonRouter.get('/:id(\\d+)/edit', edit)
-toonRouter.get('/:id(\\d+)/delete', deleteToon)
+toonRouter.get('/:id([0-9a-f]{24})', info)
+toonRouter.route('/upload').get(getUpload).post(postUpload)
+toonRouter.route('/:id([0-9a-f]{24})/edit').get(getEdit).post(postEdit)
+toonRouter.route('/:id([0-9a-f]{24})/delete').get(deleteToon)
 
 export default toonRouter
 
