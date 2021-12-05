@@ -1,17 +1,14 @@
 extends base.pug
 
 block content
-    a(href=`${toon.id}/delete`) Delete Webtoon &rarr;
-    br
-    a(href=`${toon.id}/edit`) Edit Webtoon &rarr;
     div(style='margin-bottom: 30px;')
         div
-            img(src="public/images/kakao/k_악녀의_남주님.png" width='300' height='300')
+            img(src="../"+toon.thumbnailUrl width='300' height='300')
         div
             div
-                a(style='margin-bottom: 6px;')=toon.title
+                a(style='margin-bottom: 6px;')=toon.title 
+                |  | 
                 a(style='margin-bottom: 6px;')=toon.writer
-                a(style='margin-bottom: 6px;')=toon.title
             div
                 p(style='margin-bottom: 6px;')=toon.rating
                 span ★
@@ -25,4 +22,9 @@ block content
                 p=toon.plot
             div
                 h3(style='margin-bottom: 6px;') 연재처
-                p=toon.hashtags
+                a(href=`${toon.platform}`)=toon.platform
+                
+
+    a(href=`${toon.id}/delete`) Delete Webtoon &rarr;
+    br
+    a(href=`${toon.id}/edit`) Edit Webtoon &rarr;

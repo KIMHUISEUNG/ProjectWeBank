@@ -6,7 +6,7 @@ export const home = async (req, res) => {
 }
 export const info = async (req, res) => {
   const { id } = req.params
-  const toon = await Webtoon.findByIdAndDelete(id)
+  const toon = await Webtoon.findById(id)
   if (!toon) {
     return res.render('404', { pageTitle: 'Webtoon not found.' })
   }
@@ -18,17 +18,19 @@ export const getEdit = async (req, res) => {
   if (!toon) {
     return res.render('404', { pageTitle: 'Webtoon not found.' })
   }
-  return res.render('edit', { pageTitle: `Edit ${toon.title}`, toon })
+  return res.render('toon_edit', { pageTitle: `Edit ${toon.title}`, toon })
 }
 export const postEdit = async (req, res) => {
   const { id } = req.params
+  const { path: thumbnailUrl } = req.file
   const { title, writer, plot, hashtags, platform } = req.body
-  const toon = await Video.exists({ _id: id })
+  const toon = await Webtoon.exists({ _id: id })
   if (!toon) {
     return res.render('404', { pageTitle: 'Webtoon not found.' })
   }
   await Webtoon.findByIdAndUpdate(id, {
     title,
+    thumbnailUrl,
     writer,
     plot,
     hashtags: Webtoon.formatHashtags(hashtags),
@@ -53,10 +55,12 @@ export const getUpload = (req, res) => {
   return res.render('upload', { pageTitle: 'upload Webtoon' })
 }
 export const postUpload = async (req, res) => {
+  const { path: thumbnailUrl } = req.file
   const { title, writer, plot, hashtags, platform } = req.body
   try {
     await Webtoon.create({
       title,
+      thumbnailUrl,
       writer,
       plot,
       hashtags: Webtoon.formatHashtags(hashtags),
