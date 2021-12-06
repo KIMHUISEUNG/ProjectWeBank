@@ -1,5 +1,13 @@
 mixin webtoon(webtoon)
     div
+        form(action=`/toon/${webtoon.id}`)=webtoon.title
+            div
+                img(src="#", alt="webtoon-img")
+                
+
+
+
+
         h4
             a(href=`/toon/${webtoon.id}`)=webtoon.title
         p=webtoon.description
