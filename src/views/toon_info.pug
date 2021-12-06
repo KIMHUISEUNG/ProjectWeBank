@@ -22,9 +22,11 @@ block content
                 p=toon.plot
             div
                 h3(style='margin-bottom: 6px;') 연재처
-                a(href=`${toon.platform}`)=toon.platform
+                a(href=`${toon.platform}`).link=toon.platform
                 
 
     a(href=`${toon.id}/delete`) Delete Webtoon &rarr;
     br
     a(href=`${toon.id}/edit`) Edit Webtoon &rarr;
+    
+    script(src="../public/javascripts/platformButton.js")
