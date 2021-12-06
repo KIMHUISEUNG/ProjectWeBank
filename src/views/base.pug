@@ -3,11 +3,12 @@ html(lang="ko")
     head 
         title WeBank | #{pageTitle}
         link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+        link(rel='stylesheet' href='../public/stylesheets/style.css')
     body 
         header 
-            img(src="../public/images/logo/webank.png" style='max-width: 50%; height: auto;') 
+            a(href="/")
+                img(src="../public/images/logo/webank.png" style='max-width: 30%; height: auto;') 
         main
             block content
     include partials/footer.pug
 
-    script(src="../public/javascripts/platformButton.js")
