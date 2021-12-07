@@ -27,9 +27,16 @@
   },
   "eslintConfig": {
     "parserOptions": {
-      "parser": "babel-eslint",
-      "sourceType": "module",
-      "allowImportExportEverywhere": true
+      "sourceType": "module"
+    },
+    "env": {
+      "es6": true
+    },
+    "rules": {
+      "key-spacing": 2
+    },
+    "ecmaFeatures": {
+      "modules": true
     }
   }
 }
