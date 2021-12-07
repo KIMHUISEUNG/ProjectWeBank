@@ -5,7 +5,7 @@ head
 .container
         main
             .py-5.text-center
-                header 
+                header(style='margin-bottom: 20px') 
                     a(href="/")
                         img(src="../public/images/logo/webank.png" style='max-width: 30%; height: auto;') 
                 h2 회원가입
@@ -16,18 +16,21 @@ head
 
         
 
-        .container.content-box
-            h4.mb-3 Billing address
+        .container.content-box(style='width: 550px')
             form.needs-validation(novalidate='')
             .row.g-3
                 .col-sm-6
-                label.form-label(for='firstName') First name
-                input#firstName.form-control(type='text' placeholder='' value='' required='')
+                label.form-label(for='id') 아이디
+                input#firstName.form-control(type='text' placeholder='Enter ID' value='' required='')
                 .invalid-feedback
                     | Valid first name is required.
                 .col-sm-6
-                label.form-label(for='lastName') Last name
-                input#lastName.form-control(type='text' placeholder='' value='' required='')
+                label.form-label(for='password') 비밀번호
+                input#lastName.form-control(type='password' placeholder='Enter PW' value='' required='' minlength='6')
+                .invalid-feedback
+                    | Valid last name is required.
+                label.form-label(for='password') 비밀번호 재확인
+                input#lastName.form-control(type='password' placeholder='Re-confirmation PW' value='' required='' minlength='6')
                 .invalid-feedback
                     | Valid last name is required.
                 .col-12
