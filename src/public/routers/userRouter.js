@@ -9,7 +9,7 @@ import {
 
 const userRouter = express.Router()
 
-userRouter.get('/join_membership', joinMembership)
+userRouter.get('/joinMembership', joinMembership)
 userRouter.get('/logout', logout)
 userRouter.get('/edit', edit)
 userRouter.get('/remove', remove)
