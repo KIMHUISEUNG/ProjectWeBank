@@ -11,8 +11,10 @@ block content
 
         |작가
         input(name="writer", value=toon.writer, required)
+
         |줄거리
-        textarea(name="plot", type="text",  value=toon.plot, required)
+        textarea(id='plot' name="plot", cols="100", rows="30", required)=toon.plot
+
         |키워드
         input(name="hashtags", type="text", value=toon.hashtags.join(), required)
         small 쉼표(,)로 표시해 주세요 

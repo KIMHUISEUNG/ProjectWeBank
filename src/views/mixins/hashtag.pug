@@ -1,5 +1,4 @@
 mixin hashtag(hashtag)
     div
-        form(action=`/toon/${webtoon.hashtags}`)=webtoon.hashtags
-            each hashtag in webtoon.hashtags
-                +hashtag(hashtag)
+        each hashtag in toon.hashtags
+            button(type='button')=hashtag

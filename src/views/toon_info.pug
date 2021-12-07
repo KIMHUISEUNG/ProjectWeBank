@@ -17,8 +17,7 @@ block content
                 |  평점
             div
                 p(style='margin-bottom: 6px;') 키워드
-                each hashtag in webtoon.hashtags
-                    +hashtag(hashtag)
+                +hashtag(hashtag)
 
             div
                 h3(style='margin-bottom: 6px;') 연재처
@@ -31,7 +30,7 @@ block content
                 
     .plot(style='height: 50px;')
         h3(style='margin-bottom: 6px;') 줄거리
-        p=toon.plot
+        text=`${toon.plot}`
                 
 
     a(href=`${toon.id}/delete`) Delete Webtoon &rarr;

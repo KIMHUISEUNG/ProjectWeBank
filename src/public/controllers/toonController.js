@@ -62,7 +62,7 @@ export const postUpload = async (req, res) => {
       title,
       thumbnailUrl,
       writer,
-      plot,
+      plot: Webtoon.uploadPlot(plot),
       hashtags: Webtoon.formatHashtags(hashtags),
       platform,
     })

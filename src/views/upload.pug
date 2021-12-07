@@ -10,17 +10,17 @@ block content
         label(for='thumbnail') 썸네일
         input(id="thumbnail", name='thumbnail', type="file", accept='image/*', required)
 
-        label(for='writer') 작가
-        input(id="writer", name="writer", type="text",  required)
+        |작가
+        input(id="writer", name="writer", type="text", required)
         small 슬래쉬(/)로 나눠 주세요 
 
-        |줄거리
-        textarea(name="plot", type="text", required)
+        label(for='plot') 줄거리
+        textarea(name="plot", cols="100", rows="50", required) 
 
-        label(for='hashtags') 키워드
+        |키워드
         input(id="hashtags", name="hashtags", type="text", required)
         small 쉼표(,)로 나눠 주세요 
 
-        label(for='platform') 링크
+        |링크
         input(id="platform", name="platform", type="text", required)
         input(type="submit", value="Upload Webtoon")
