@@ -1,4 +1,5 @@
 extends base.pug
+include mixins/hashtag.pug
 
 block content
     link(rel='stylesheet' href='../public/stylesheets/toon_info.css')
@@ -16,7 +17,8 @@ block content
                 |  평점
             div
                 p(style='margin-bottom: 6px;') 키워드
-                p=toon.hashtags
+                each hashtag in webtoon.hashtags
+                    +hashtag(hashtag)
 
             div
                 h3(style='margin-bottom: 6px;') 연재처
