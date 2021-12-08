@@ -1,0 +1,19 @@
+nav a {
+  text-decoration: none;
+  color: black;
+  align-content: center;
+}
+.my-nav2 {
+}
+.my-nav {
+  min-width: 700px;
+  overflow-x: auto;
+}
+.static-oj {
+  position: static;
+}
+
+@media screen and (min-width: 800px) {
+  .nav-col {
+  }
+}
