@@ -1,5 +1,6 @@
 import './db'
 import './public/models/Webtoon'
+import './public/models/User'
 import app from './app'
 
 const PORT = 5050

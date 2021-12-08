@@ -4,7 +4,7 @@
 
 import express from 'express'
 import morgan from 'morgan'
-import mainRouter from './public/routers/mainRouter'
+import rootRouter from './public/routers/rootRouter'
 import userRouter from './public/routers/userRouter'
 import toonRouter from './public/routers/toonRouter'
 /**import { render } from 'pug'*/
@@ -23,7 +23,7 @@ app.use('/uploads', express.static('uploads'))
 
 // this work is JMT...
 
-app.use('/', mainRouter)
+app.use('/', rootRouter)
 app.use('/user', userRouter)
 app.use('/toon', toonRouter)
 
