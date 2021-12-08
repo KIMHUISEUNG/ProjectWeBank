@@ -1,4 +1,5 @@
 include bootstrapView/bootstrapView.pug
+include mixins/toon-info
 head 
 link(rel="stylesheet", type="text/css" href="../public/stylesheets/main.css")
 a(href="/toon/upload") Upload Webtoon
@@ -17,13 +18,8 @@ a(href="/toon/upload") Upload Webtoon
                     circle(cx='10.5' cy='10.5' r='7.5')
                     path(d='M21 21l-5.2-5.2')
                 if loggedIn 
-<<<<<<< HEAD
                     a.btn.btn-sm.btn-outline-secondary.static-oj(href='/logout' style='margin-right:5px') Log Out
                     a.btn.btn-sm.btn-outline-secondary.static-oj(href='/my-profile') #{loggedInUser.name}'s profile    
-=======
-                  a.btn.btn-sm.btn-outline-secondary.static-oj(href='/user/logout' style='margin-right:5px') Log Out
-                  a.btn.btn-sm.btn-outline-secondary.static-oj(href='/my-profile') #{loggedInUser.name}'s profile    
->>>>>>> e9fec73953fc83732da75646d5fd0bdb2fd8b474
                 else
                     a.btn.btn-sm.btn-outline-secondary.static-oj(href='/login' style='margin-right:5px') Sign in    
                     a.btn.btn-sm.btn-outline-secondary.static-oj(href='/join') Sign up
@@ -69,11 +65,56 @@ main.container
             span.visually-hidden Next
 
     
-    .p-1.bg-white.border.rounded-3
+    .p-1.bg-white.border.rounded-3(style='margin-bottom: 60px; margin-top: 60px;')
         .row
             .col
                 p.dev-p 안녕하세요 webank 관리자 운영자H 입니다.
             .col
                 p.dev-p2 운영자H
+
+    .container
+        h3 최신 TOP 10
+            hr
+        .hstack.gap-3.img-stack1
+            .bg-light.border
+                img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+                each info in toons
+                    +toon-info(info)
+            .bg-light.border
+                img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+            .bg-light.border
+                img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+            .bg-light.border
+                img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+            .bg-light.border
+                img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+
+    .container
+        h3 최신 TOP 10
+            hr
+        .hstack.gap-3.img-stack1
+            .bg-light.border
+                img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+            .bg-light.border
+                img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+            .bg-light.border
+                img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+            .bg-light.border
+                img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+            .bg-light.border
+                img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
     
-    
+    .container
+        h3 최신 TOP 10
+            hr
+        .hstack.gap-3.img-stack1
+            .bg-light.border
+                img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+            .bg-light.border
+                img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+            .bg-light.border
+                img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+            .bg-light.border
+                img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+            .bg-light.border
+                img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')

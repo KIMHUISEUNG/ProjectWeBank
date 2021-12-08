@@ -2,7 +2,7 @@ import Webtoon from '../models/Webtoon'
 
 export const home = async (req, res) => {
   const toons = await Webtoon.find({})
-  return res.render('mainpage', { pageTitle: 'Home' })
+  return res.render('mainpage', { pageTitle: 'Home', toons })
 }
 export const info = async (req, res) => {
   const { id } = req.params
