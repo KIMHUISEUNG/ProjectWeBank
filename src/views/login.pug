@@ -4,19 +4,25 @@ head
   link(rel="stylesheet", type="text/css" href="../public/stylesheets/login.css")
 main.form-signin
       div.centerDiv   
-        form(action='/')
+        form(method='POST')
           img.mb-4.logocss(src='../public/images/logo/webank.png' alt='webank' width='440' height='200')
           h1.h3.mb-3.fw-normal Please sign in
           .form-floating
-            input#floatingInput.form-control(type='email' placeholder='name@example.com')
-            label(for='floatingInput') Email address
+            input#username.form-control(type='text' name ='username' placeholder='ID' required)
+            label(for='username') ID
           .form-floating
-            input#floatingPassword.form-control(type='password' placeholder='Password')
-            label(for='floatingPassword') Password
+            input#password.form-control(type='password' name='password' placeholder='Password' required)
+            label(for='password') Password
           .checkbox.mb-3
             label
               input(type='checkbox' value='remember-me')
               |  Remember me
           button.w-100.btn.btn-lg.btn-primary(type='submit') Sign in
+        div 
+          if errorMessage
+            span=errorMessage 
+            br
+          span 계정이 없으신가요?
+          a(href='/join')  Create one now &rarr;
           p.mt-5.mb-3.text-muted © 2021-2020
 
