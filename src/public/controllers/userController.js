@@ -63,8 +63,13 @@ export const postLogin = async (req, res) => {
 
   return res.redirect('/')
 }
-
-export const edit = (req, res) => res.send('Edit User')
+export const mypage = (req, res) => res.render('mypage')
+export const getEdit = (req, res) => {
+  return res.render('user_edit', { pageTitle: 'Edit Profile' })
+}
+export const postEdit = (req, res) => {
+  return res.render('user_edit')
+}
 export const logout = (req, res) => {
   req.session.destroy()
   return res.redirect('/')
