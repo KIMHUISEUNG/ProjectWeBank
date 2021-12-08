@@ -17,8 +17,13 @@ a(href="/toon/upload") Upload Webtoon
                     circle(cx='10.5' cy='10.5' r='7.5')
                     path(d='M21 21l-5.2-5.2')
                 if loggedIn 
+<<<<<<< HEAD
                     a.btn.btn-sm.btn-outline-secondary.static-oj(href='/logout' style='margin-right:5px') Log Out
                     a.btn.btn-sm.btn-outline-secondary.static-oj(href='/my-profile') #{loggedInUser.name}'s profile    
+=======
+                  a.btn.btn-sm.btn-outline-secondary.static-oj(href='/user/logout' style='margin-right:5px') Log Out
+                  a.btn.btn-sm.btn-outline-secondary.static-oj(href='/my-profile') #{loggedInUser.name}'s profile    
+>>>>>>> e9fec73953fc83732da75646d5fd0bdb2fd8b474
                 else
                     a.btn.btn-sm.btn-outline-secondary.static-oj(href='/login' style='margin-right:5px') Sign in    
                     a.btn.btn-sm.btn-outline-secondary.static-oj(href='/join') Sign up

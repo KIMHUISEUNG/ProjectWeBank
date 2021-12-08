@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import './db'
 import './public/models/Webtoon'
 import './public/models/User'
