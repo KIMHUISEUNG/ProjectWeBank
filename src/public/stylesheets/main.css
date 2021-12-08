@@ -4,6 +4,7 @@ nav a {
   align-content: center;
 }
 .my-nav2 {
+  color: white;
 }
 .my-nav {
   min-width: 700px;
@@ -11,6 +12,24 @@ nav a {
 }
 .static-oj {
   position: static;
+}
+hr {
+  color: black;
+  right: ;
+}
+body {
+  background-color: rgb(250, 250, 250);
+}
+.dev-p {
+  padding: 8px;
+  margin-bottom: 0;
+  margin-left: 10px;
+}
+.dev-p2 {
+  padding: 8px;
+  margin-bottom: 0;
+  text-align: right;
+  margin-right: 10px;
 }
 
 @media screen and (min-width: 800px) {
