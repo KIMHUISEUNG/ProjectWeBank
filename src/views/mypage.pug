@@ -4,5 +4,8 @@ block content
     div 
         nav 
             ul
-                if loggedIn 
-                    a(href='/user/edit') Edit Profile
+                if loggedIn
+                    li
+                        a(href='/user/edit') Edit Profile
+                    li
+                        a(href='/toon/upload') Toon Upload

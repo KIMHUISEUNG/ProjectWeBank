@@ -1,4 +1,5 @@
 import express from 'express'
+import { protectorMiddleware } from '../../middlewares'
 import {
   mypage,
   getEdit,
@@ -8,8 +9,8 @@ import {
 
 const userRouter = express.Router()
 
-userRouter.get('/logout', logout)
+userRouter.get('/logout', protectorMiddleware, logout)
 userRouter.get('/mypage', mypage)
-userRouter.route('/edit').get(getEdit).post(postEdit)
+userRouter.route('/edit').all(protectorMiddleware).get(getEdit).post(postEdit)
 
 export default userRouter

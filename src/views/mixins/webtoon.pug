@@ -1,18 +1,11 @@
 mixin webtoon(webtoon)
-    div
-        form(action=`/toon/${webtoon.id}`)=webtoon.title
-            div
-                img(src="#", alt="webtoon-img")
-                
-
-
-
-
-        h4
-            a(href=`/toon/${webtoon.id}`)=webtoon.title
-        p=webtoon.description
-        ul
+    a(href=`/toon/${webtoon.id}`)
+        div
+            img(src="../"+webtoon.thumbnailUrl width='300' height='300')
+            span=webtoon.title
+            |  
+            small=webtoon.writer
+            br
             each hashtag in webtoon.hashtags
-                li=hashtag
-        small=webtoon.createdAt
-        hr
+                span=hashtag 
+                |  

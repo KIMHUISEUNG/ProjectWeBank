@@ -1,6 +1,6 @@
 mixin keywordbox(hashtags)
     link(rel='stylesheet' href='../public/stylesheets/checkbox.css')
-    input#action.inp-cbx(type='checkbox', name='hashtags', value='액션' )
+    input#action.inp-cbx(type='checkbox', name='hashtags', value='#액션' )
     
     label.cbx(for='action') 
         span
@@ -8,7 +8,7 @@ mixin keywordbox(hashtags)
                 use(xlink:href='#check')
         span #액션
 
-    input#fantasy.inp-cbx(type='checkbox' name='hashtags', value='판타지' )
+    input#fantasy.inp-cbx(type='checkbox' name='hashtags', value='#판타지' )
     label.cbx(for='fantasy')
         span
             svg(width='12px',height='10px')

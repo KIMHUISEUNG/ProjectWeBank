@@ -1,5 +1,5 @@
 import express from 'express'
-import { thumbnailUpload } from '../../middlewares'
+import { protectorMiddleware, thumbnailUpload } from '../../middlewares'
 import {
   info,
   getUpload,
@@ -14,13 +14,18 @@ const toonRouter = express.Router()
 toonRouter.get('/:id([0-9a-f]{24})', info)
 toonRouter
   .route('/upload')
+  .all(protectorMiddleware)
   .get(getUpload)
   .post(thumbnailUpload.single('thumbnail'), postUpload)
 toonRouter
   .route('/:id([0-9a-f]{24})/edit')
+  .all(protectorMiddleware)
   .get(getEdit)
   .post(thumbnailUpload.single('thumbnail'), postEdit)
-toonRouter.route('/:id([0-9a-f]{24})/delete').get(deleteToon)
+toonRouter
+  .route('/:id([0-9a-f]{24})/delete')
+  .all(protectorMiddleware)
+  .get(deleteToon)
 
 export default toonRouter
 

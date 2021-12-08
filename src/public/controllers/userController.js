@@ -67,11 +67,25 @@ export const mypage = (req, res) => res.render('mypage')
 export const getEdit = (req, res) => {
   return res.render('user_edit', { pageTitle: 'Edit Profile' })
 }
-export const postEdit = (req, res) => {
-  return res.render('user_edit')
+export const postEdit = async (req, res) => {
+  const {
+    session: {
+      user: { _id },
+    },
+    body: { name, email },
+  } = req
+  const updatedUser = await User.findByIdAndUpdate(
+    _id,
+    {
+      name,
+      email,
+    },
+    { new: true }
+  )
+  req.session.user = updatedUser
+  return res.redirect('/user/edit')
 }
 export const logout = (req, res) => {
   req.session.destroy()
   return res.redirect('/')
 }
-export const profile = (req, res) => res.send("User's profile")
