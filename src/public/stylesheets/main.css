@@ -31,8 +31,15 @@ body {
   text-align: right;
   margin-right: 10px;
 }
+.img-stack1 {
+  margin-bottom: 30px;
+}
+.coborder {
+  border-radius: 30px;
+}
+.align-left {
+  text-align: left;
+}
 
-@media screen and (min-width: 800px) {
-  .nav-col {
-  }
+@media screen and (max-width: 1000px) {
 }
