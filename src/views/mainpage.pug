@@ -17,11 +17,11 @@ a(href="/toon/upload") Upload Webtoon
                     circle(cx='10.5' cy='10.5' r='7.5')
                     path(d='M21 21l-5.2-5.2')
                 if loggedIn 
-                  a.btn.btn-sm.btn-outline-secondary.static-oj(href='/logout' style='margin-right:5px') Log Out
-                  a.btn.btn-sm.btn-outline-secondary.static-oj(href='/my-profile') #{loggedInUser.name}'s profile    
+                    a.btn.btn-sm.btn-outline-secondary.static-oj(href='/logout' style='margin-right:5px') Log Out
+                    a.btn.btn-sm.btn-outline-secondary.static-oj(href='/my-profile') #{loggedInUser.name}'s profile    
                 else
-                  a.btn.btn-sm.btn-outline-secondary.static-oj(href='/login' style='margin-right:5px') Sign in    
-                  a.btn.btn-sm.btn-outline-secondary.static-oj(href='/join') Sign up
+                    a.btn.btn-sm.btn-outline-secondary.static-oj(href='/login' style='margin-right:5px') Sign in    
+                    a.btn.btn-sm.btn-outline-secondary.static-oj(href='/join') Sign up
         .nav-scroller.py-1.my-1.my-nav2
             hr.my-1
             nav.nav.d-flex
@@ -48,13 +48,27 @@ a(href="/toon/upload") Upload Webtoon
 
 
 main.container
-    .md-5.mb-4.text-white.rounded.bg-dark
-        .col-md-6
-            img(src="public/images/pages/event_page.png", alt="Event banner" style='min-width: 936px')
+    #carouselExampleControls.carousel.slide(data-bs-ride='carousel' style='margin-bottom:20px')
+        .carousel-inner
+            .carousel-item.active
+                img.d-block.w-100(src='public/images/pages/event_page.png' alt='Event banner')
+            .carousel-item
+                img.d-block.w-100(src='public/images/pages/event_page.png' alt='Event banner')
+            .carousel-item
+                img.d-block.w-100(src='public/images/pages/event_page.png' alt='Event banner')
+        button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControls' data-bs-slide='prev')
+            span.carousel-control-prev-icon(aria-hidden='true')
+            span.visually-hidden Previous
+        button.carousel-control-next(type='button' data-bs-target='#carouselExampleControls' data-bs-slide='next')
+            span.carousel-control-next-icon(aria-hidden='true')
+            span.visually-hidden Next
+
     
-    .col-md-6
-      .p-5.bg-light.border.rounded-3
-        h2 Add borders
-        p
-          | Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.
-        
+    .p-1.bg-white.border.rounded-3
+        .row
+            .col
+                p.dev-p 안녕하세요 webank 관리자 운영자H 입니다.
+            .col
+                p.dev-p2 운영자H
+    
+    
