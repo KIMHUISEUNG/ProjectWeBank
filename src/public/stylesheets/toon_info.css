@@ -12,5 +12,6 @@
   float: left;
 }
 
-.plot {
+.toon__info {
+  white-space: pre-wrap;
 }

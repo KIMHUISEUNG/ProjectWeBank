@@ -1,4 +1,5 @@
 extends base.pug
+include mixins/keywordbox
 
 block content
     h1 Edit webtoon's infomation
@@ -13,11 +14,13 @@ block content
         input(name="writer", value=toon.writer, required)
 
         |줄거리
-        textarea(id='plot' name="plot", cols="100", rows="30", required)=toon.plot
+        textarea(id='plot' name="plot", cols="100", rows="30", white-space= "pre-wrap", required)=toon.plot
 
-        |키워드
-        input(name="hashtags", type="text", value=toon.hashtags.join(), required)
-        small 쉼표(,)로 표시해 주세요 
+        div
+            |키워드 
+            br
+            +keywordbox(hashtags)
+            
 
         |링크
         input(name="platform", type="text", value=toon.platform.join(), required)

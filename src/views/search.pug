@@ -1,11 +1,15 @@
 extends base
 include mixins/webtoon
+include mixins/keywordbox
+
 
 block content
     form(method="GET")
         input(placeholder="Search by title", name="keyword" type="text")
         input(type="submit", value="search now")
-    
+        div
+            br
+            +keywordbox(hashtags)
     div 
         each webtoon in toons
             +webtoon(webtoon)

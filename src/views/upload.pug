@@ -1,4 +1,5 @@
 extends base.pug
+include mixins/keywordbox
 
 block content 
     if errorMessage
@@ -15,12 +16,14 @@ block content
         small 슬래쉬(/)로 나눠 주세요 
 
         label(for='plot') 줄거리
-        textarea(name="plot", cols="100", rows="50", required) 
+        textarea(name="plot", cols="90", rows="30", required) 
 
-        |키워드
-        input(id="hashtags", name="hashtags", type="text", required)
-        small 쉼표(,)로 나눠 주세요 
-
-        |링크
-        input(id="platform", name="platform", type="text", required)
+        div
+            |키워드 
+            br
+            +keywordbox(hashtags)
+            
+        div
+            |링크
+            input(id="platform", name="platform", type="text", required)
         input(type="submit", value="Upload Webtoon")

@@ -10,6 +10,7 @@ export const info = async (req, res) => {
   if (!toon) {
     return res.render('404', { pageTitle: 'Webtoon not found.' })
   }
+  console.log(toon.plot)
   return res.render('toon_info', { pageTitle: toon.title, toon })
 }
 export const getEdit = async (req, res) => {
@@ -32,7 +33,7 @@ export const postEdit = async (req, res) => {
     title,
     thumbnailUrl,
     writer,
-    plot,
+    plot: Webtoon.uploadPlot(plot),
     hashtags: Webtoon.formatHashtags(hashtags),
     platform,
   })
@@ -62,8 +63,8 @@ export const postUpload = async (req, res) => {
       title,
       thumbnailUrl,
       writer,
-      plot: Webtoon.uploadPlot(plot),
-      hashtags: Webtoon.formatHashtags(hashtags),
+      plot,
+      hashtags,
       platform,
     })
     return res.redirect('/')

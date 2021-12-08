@@ -16,7 +16,7 @@ const webtoonSchema = new mongoose.Schema({
 
 webtoonSchema.static('formatHashtags', function (hashtags) {
   return hashtags
-    .split(',')
+    .split('&')
     .map((word) => (word.startsWith('#') ? word : `#${word}`))
 })
 
@@ -28,6 +28,7 @@ webtoonSchema.static('uploadPlot', function (plot) {
   plot = plot.replace(/<br>/gi, '\n')
   plot = plot.replace(/<\/br>/gi, '\n')
   plot = plot.replace(/<br \/>/gi, '\n')
+  console.log(plot)
   return plot
 })
 webtoonSchema.static('printPlot', function (plot) {
