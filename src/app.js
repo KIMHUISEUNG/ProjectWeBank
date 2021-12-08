@@ -8,6 +8,7 @@ import session from 'express-session'
 import rootRouter from './public/routers/rootRouter'
 import userRouter from './public/routers/userRouter'
 import toonRouter from './public/routers/toonRouter'
+import { localsMiddleware } from './middlewares'
 /**import { render } from 'pug'*/
 /**const { request } = require('http')*/
 
@@ -32,7 +33,7 @@ app.use('/public', express.static('src/public'))
 app.use('/uploads', express.static('uploads'))
 
 // this work is JMT...
-
+app.use(localsMiddleware)
 app.use('/', rootRouter)
 app.use('/user', userRouter)
 app.use('/toon', toonRouter)
