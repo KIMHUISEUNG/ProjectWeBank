@@ -5,6 +5,8 @@ import {
   getEdit,
   postEdit,
   logout,
+  getChangePassword,
+  postChangePassword,
 } from '../controllers/userController'
 
 const userRouter = express.Router()
@@ -12,5 +14,10 @@ const userRouter = express.Router()
 userRouter.get('/logout', protectorMiddleware, logout)
 userRouter.get('/mypage', mypage)
 userRouter.route('/edit').all(protectorMiddleware).get(getEdit).post(postEdit)
+userRouter
+  .route('/changePassword')
+  .all(protectorMiddleware)
+  .get(getChangePassword)
+  .post(postChangePassword)
 
 export default userRouter

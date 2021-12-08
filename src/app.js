@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true })) //application에게 form을 처�
 
 app.use(
   session({
-    secret: process.env.COOKIE_SECRET,
+    secret: 'djeixleibkxj',
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.DB_URL }),

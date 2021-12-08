@@ -1,5 +1,6 @@
 import User from '../models/User'
 import bcrypt from 'bcrypt'
+import { start } from 'repl'
 
 export const getJoinMembership = (req, res) => res.render('joinMembership')
 
@@ -87,5 +88,12 @@ export const postEdit = async (req, res) => {
 }
 export const logout = (req, res) => {
   req.session.destroy()
+  return res.redirect('/')
+}
+
+export const getChangePassword = (req, res) => {
+  return res.render('changePassword', { pageTitle: '비밀번호 변경' })
+}
+export const postChangePassword = (req, res) => {
   return res.redirect('/')
 }
