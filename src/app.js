@@ -4,6 +4,7 @@
 
 import express from 'express'
 import morgan from 'morgan'
+import session from 'express-session'
 import rootRouter from './public/routers/rootRouter'
 import userRouter from './public/routers/userRouter'
 import toonRouter from './public/routers/toonRouter'
@@ -18,6 +19,15 @@ app.set('views', process.cwd() + '/src/views')
 app.set('view engine', 'pug')
 app.use(logger)
 app.use(express.urlencoded({ extended: true })) //application에게 form을 처리하고싶다고 말함.
+
+app.use(
+  session({
+    secret: 'Hello',
+    resave: true,
+    saveUninitialized: true,
+  })
+)
+
 app.use('/public', express.static('src/public'))
 app.use('/uploads', express.static('uploads'))
 
