@@ -8,7 +8,7 @@ link(rel="stylesheet", type="text/css" href="../public/stylesheets/main.css")
         .row.flex-nowrap.justify-content-between.align-items-center
             .col-4.align-left
                 a.blog-header-logo.text-dark(href='/')
-                img(src='../public/images/logo/webank.png' alt='webank' width='215' height='85')
+                    img(src='../public/images/logo/webank.png' alt='webank' width='215' height='85')
             
             .col-4.d-flex.justify-content-end.align-items-center
                 a.link-secondary(href='/search' aria-label='Search')
@@ -52,11 +52,14 @@ main.container
     #carouselExampleControls.carousel.slide(data-bs-ride='carousel' style='margin-bottom:20px')
         .carousel-inner
             .carousel-item.active
-                img.d-block.w-100(src='public/images/pages/event_page.png' alt='Event banner')
+                a(href='/eventBanner')
+                    img.d-block.w-100(src='public/images/pages/event_page.png' alt='Event banner')
             .carousel-item
-                img.d-block.w-100(src='public/images/pages/event_page.png' alt='Event banner')
+                a(href='/eventBanner')
+                    img.d-block.w-100(src='public/images/pages/event_page.png' alt='Event banner')
             .carousel-item
-                img.d-block.w-100(src='public/images/pages/event_page.png' alt='Event banner')
+                a(href='/eventBanner')
+                    img.d-block.w-100(src='public/images/pages/event_page.png' alt='Event banner')
         button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControls' data-bs-slide='prev')
             span.carousel-control-prev-icon(aria-hidden='true')
             span.visually-hidden Previous
