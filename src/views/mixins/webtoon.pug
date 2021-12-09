@@ -1,11 +1,14 @@
 mixin webtoon(webtoon)
-    a(href=`/toon/${webtoon.id}`)
-        div
-            img(src="../"+webtoon.thumbnailUrl width='300' height='300')
-            span=webtoon.title
-            |  
-            small=webtoon.writer
-            br
-            each hashtag in webtoon.hashtags
-                span=hashtag 
+    head 
+        link(rel="stylesheet", type="text/css" href="../public/stylesheets/webtoonST.css")
+    .col.p-2
+        a.mixin-a.flex-auto(href=`/toon/${webtoon.id}`)
+            div
+                img(src="../"+webtoon.thumbnailUrl width='300' height='300')
+                h3=webtoon.title
                 |  
+                small=webtoon.writer
+                br
+                each hashtag in webtoon.hashtags
+                    span=hashtag 
+                    |  

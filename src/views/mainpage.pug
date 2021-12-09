@@ -75,48 +75,25 @@ main.container
         .container
             h3 최신 TOP 10
                 hr
-            .hstack.gap-3.img-stack1
-                .bg-light.border(width='170px' height='170px')
-                    each webtoon in toons
-                      +webtoon(webtoon)
-                .bg-light.border
-                    img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
-                .bg-light.border
-                    img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
-                .bg-light.border
-                    img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
-                .bg-light.border
-                    img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+            
+            .row.bg-light.border(width='170px' height='170px')
+                each webtoon in toons
+                    +webtoon(webtoon)
+                
     div(align='center')
         .container
             h3 전체 TOP 10
                 hr
-            .hstack.gap-3.img-stack1
-                .bg-light.border
-                    img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
-                .bg-light.border
-                    img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
-                .bg-light.border
-                    img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
-                .bg-light.border
-                    img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
-                .bg-light.border
-                    img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+            .row.bg-light.border(width='170px' height='170px')
+                each webtoon in toons
+                    +webtoon(webtoon)
     div(align='center')    
         .container
             h3 인기작
                 hr
-            .hstack.gap-3.img-stack1
-                .bg-light.border
-                    img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
-                .bg-light.border
-                    img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
-                .bg-light.border
-                    img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
-                .bg-light.border
-                    img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
-                .bg-light.border
-                    img(src="public/images/naver/n_광장.png", alt="광장이었던것.." width='170px' height='170px')
+            .row.bg-light.border(width='170px' height='170px')
+                each webtoon in toons
+                    +webtoon(webtoon)
 
 div(align='center' style='margin-top:100px')
     .container
