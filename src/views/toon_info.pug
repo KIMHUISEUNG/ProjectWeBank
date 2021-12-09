@@ -8,11 +8,12 @@ block content
             img(src="../"+toon.thumbnailUrl width='300' height='300')
         .detail
             div(style='margin-top: 30px')
-                a(style='margin-bottom: 6px;')=toon.title 
+                a(style='margin-bottom: 6px;')
+                    h2=toon.title 
                 |  | 
                 a(style='margin-bottom: 6px;')=toon.writer
             div
-                |  추천수
+                h6  추천수
                 span(style='margin-bottom: 6px;')=toon.rating
                 
             div(style='margin-top: 30px')
@@ -35,7 +36,7 @@ block content
         h3(style='margin-bottom: 6px;') 줄거리
         span(style='margin-boton: 20px').toon__info=`${toon.plot}`
             
-    div(style='margin-top: 10px') 
+    div(style='margin-top: 50px') 
 
         a(href=`${toon.id}/delete`) Delete Webtoon &rarr;
         br
@@ -44,3 +45,55 @@ block content
         br
         bt
     
+    .container
+      footer.row.row-cols-6.py-5.my-5.border-top
+        .col
+          a.d-flex.align-items-center.mb-3.link-dark.text-decoration-none(href='/')
+            img(src='../public/images/logo/webank.png' alt='webank' width='130' height='60')
+          p.text-muted © 2021
+        .col
+        .col
+          h5 장르
+          ul.nav.flex-column
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 로맨스
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 로판
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 판타지
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 현판
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 무협
+        .col
+          ul.nav.flex-column
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 대체역사
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 라이트노벨
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 게임
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 스포츠
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') SF 
+        .col
+          h5 기타
+          ul.nav.flex-column
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 의견보내기
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 업데이트 현황
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 이용약관
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 개인정보처리방침
+        .col
+          h5 계정
+          ul.nav.flex-column
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 로그인
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 회원가입
+            li.nav-item.mb-2
+              a.nav-link.p-0.text-muted(href='#') 비밀번호 찾기
