@@ -22,10 +22,11 @@ export const publicOnlyMiddleware = (req, res, next) => {
     return res.redirect('/')
   }
 }
-export const thumbnailUpload = multer({
-  dest: 'uploads/thumbnail/',
+
+export const avatarUpload = multer({
+  dest: 'uploads/avatar/',
 })
 
-export const plotUpload = multer({
-  dest: 'uploads/plot/',
+export const thumbnailUpload = multer({
+  dest: 'uploads/thumbnail/',
 })

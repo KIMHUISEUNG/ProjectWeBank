@@ -24,7 +24,7 @@ export const getEdit = async (req, res) => {
 export const postEdit = async (req, res) => {
   const { id } = req.params
   const { path: thumbnailUrl } = req.file
-  const { title, writer, plot, hashtags, platform } = req.body
+  const { title, writer, plot, platform } = req.body
   const toon = await Webtoon.exists({ _id: id })
   if (!toon) {
     return res.status(404).render('404', { pageTitle: 'Webtoon not found.' })
@@ -34,7 +34,6 @@ export const postEdit = async (req, res) => {
     thumbnailUrl,
     writer,
     plot: Webtoon.uploadPlot(plot),
-    hashtags: Webtoon.formatHashtags(hashtags),
     platform,
   })
 
