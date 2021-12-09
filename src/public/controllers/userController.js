@@ -1,6 +1,5 @@
 import User from '../models/User'
 import bcrypt from 'bcrypt'
-import { start } from 'repl'
 
 export const getJoinMembership = (req, res) => res.render('joinMembership')
 
@@ -92,8 +91,35 @@ export const logout = (req, res) => {
 }
 
 export const getChangePassword = (req, res) => {
-  return res.render('changePassword', { pageTitle: '비밀번호 변경' })
+  return res
+    .status(400)
+    .render('user/changePassword', { pageTitle: '비밀번호 변경' })
 }
-export const postChangePassword = (req, res) => {
-  return res.redirect('/')
+export const postChangePassword = async (req, res) => {
+  const {
+    session: {
+      user: { _id },
+    },
+    body: { oldPassword, newPassword, newPasswordConfirmation },
+  } = req
+
+  const user = await User.findById(_id)
+  const ok = await bcrypt.compare(oldPassword, user.password)
+  if (!ok) {
+    return res.status(400).render('user/changePassword', {
+      pageTitle: '비밀번호 변경',
+      errorMessage: 'The current password is incorrect',
+    })
+  }
+
+  if (newPassword !== newPasswordConfirmation) {
+    return res.render('user/changePassword', {
+      pageTitle: '비밀번호 변경',
+      errorMessage: 'The password does not match the confirmation',
+    })
+  }
+
+  user.password = newPassword
+  await user.save()
+  return res.redirect('/user/logout')
 }
