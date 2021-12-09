@@ -7,33 +7,40 @@ block content
         .thumb
             img(src="../"+toon.thumbnailUrl width='300' height='300')
         .detail
-            div
+            div(style='margin-top: 30px')
                 a(style='margin-bottom: 6px;')=toon.title 
                 |  | 
                 a(style='margin-bottom: 6px;')=toon.writer
             div
-                p(style='margin-bottom: 6px;')=toon.rating
-                span ★
-                |  평점
-            div
+                |  추천수
+                span(style='margin-bottom: 6px;')=toon.rating
+                
+            div(style='margin-top: 30px')
                 p(style='margin-bottom: 6px;') 키워드
-                +hashtag(hashtag)
+                    +hashtag(hashtag)
 
             div
-                h3(style='margin-bottom: 6px;') 연재처
+                h4(style='margin-bottom: 6px;') 연재처
                 if (`${toon.platform}`.includes('comic.naver.com')) 
-                    a(href=`${toon.platform}` target='_blank') 네이버
-                else if (`${toon.platform}`.includes('lezhin.com'))
-                    a(href=`${toon.platform}` target='_blank') 레진
-                else if (`${toon.platform}`.includes('webtoon.kakao.com'))
-                    a(href=`${toon.platform}` target='_blank') 카카오웹툰
+                    a(href=`${toon.platform}` target='_blank') 
+                        img(src='../public/images/platformButton/naver.png', width='10%', height='10%')
+                if (`${toon.platform}`.includes('lezhin.com'))
+                    a(href=`${toon.platform}` target='_blank') 
+                        img(src='../public/images/platformButton/lezhin.png', width='10%', height='10%')
+                if (`${toon.platform}`.includes('webtoon.kakao.com'))
+                    a(href=`${toon.platform}` target='_blank') 
+                        img(src='../public/images/platformButton/kakao.png', width='10%', height='10%')
                 
-    .plot(style='height: 50px;')
+    div
         h3(style='margin-bottom: 6px;') 줄거리
-        span.toon__info=`${toon.plot}`
-                
+        span(style='margin-boton: 20px').toon__info=`${toon.plot}`
+            
+    div(style='margin-top: 10px') 
 
-    a(href=`${toon.id}/delete`) Delete Webtoon &rarr;
-    br
-    a(href=`${toon.id}/edit`) Edit Webtoon &rarr;
+        a(href=`${toon.id}/delete`) Delete Webtoon &rarr;
+        br
+        a(href=`${toon.id}/edit`) Edit Webtoon &rarr;
+        br
+        br
+        bt
     

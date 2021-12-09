@@ -9,9 +9,15 @@
 
 .detail {
   font-size: 15px;
-  float: left;
 }
 
 .toon__info {
   white-space: pre-wrap;
+}
+
+.platform {
+}
+
+.edit {
+  float: left;
 }

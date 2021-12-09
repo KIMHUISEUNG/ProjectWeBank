@@ -1,6 +1,6 @@
 mixin webtoon(webtoon)
     a(href=`/toon/${webtoon.id}`)
-        div
+        div 
             img(src="../"+webtoon.thumbnailUrl width='300' height='300')
             span=webtoon.title
             |  
@@ -8,4 +8,4 @@ mixin webtoon(webtoon)
             br
             each hashtag in webtoon.hashtags
                 span=hashtag 
-                |  
+                |
