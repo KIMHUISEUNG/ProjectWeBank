@@ -40,12 +40,20 @@ export const postEdit = async (req, res) => {
   return res.redirect(`/toon/${id}`)
 }
 export const search = async (req, res) => {
-  const { keyword } = req.query
+  const { keyword, hashtags } = req.query
+  console.log(hashtags)
   let toons = []
   if (keyword) {
     toons = await Webtoon.find({
       title: {
         $regex: new RegExp(keyword, 'i'), //제목에 keyword를 포함하는 영상을 찾을 것이다. i -> 대소문자 무시.
+      },
+    })
+  }
+  if (hashtags) {
+    toons = await Webtoon.find({
+      hashtags: {
+        $regex: new RegExp(hashtags, 'i'),
       },
     })
   }

@@ -2,14 +2,39 @@ doctype html
 include bootstrapView/bootstrapView.pug 
 html(lang="ko")
     head 
-        title #{siteName} | #{pageTitle}
-        link(rel="stylesheet" href="https://unpkg.com/mvp.css")
-        link(rel='stylesheet' href='../public/stylesheets/style.css')
-    body 
-        header 
-            a(href="/")
-                img(src="../public/images/logo/webank.png" style='max-width: 30%; height: auto;') 
-        main
-            block content
-    include partials/footer.pug
+    title #{siteName} | #{pageTitle}
+    link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+    link(rel='stylesheet' href='../public/stylesheets/style.css')
+    .container
+        header.blog-header.py-3
+            .row.flex-nowrap.justify-content-between.align-items-center
+                .col-4.align-left
+                    a.blog-header-logo.text-dark(href='/')
+                    img(src='../public/images/logo/webank.png' alt='webank' width='215' height='85')
+                
+                .col-4.d-flex.justify-content-end.align-items-center
+                    a.link-secondary(href='/search' aria-label='Search')
+                        svg.mx-3(xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' role='img' viewBox='0 0 24 24')
+                            title Search
+                            circle(cx='10.5' cy='10.5' r='7.5')
+                            path(d='M21 21l-5.2-5.2')
+                    if loggedIn 
+                        a.btn.btn-sm.btn-outline-secondary.static-oj(href='/user/logout' style='margin-right:5px') Log Out
+                        a.btn.btn-sm.btn-outline-secondary.static-oj(href='/user/mypage') mypage    
+                    else
+                        a.btn.btn-sm.btn-outline-secondary.static-oj(href='/login' style='margin-right:5px') Sign In    
+                        a.btn.btn-sm.btn-outline-secondary.static-oj(href='/join') Sign Up
+
+            .nav-scroller.py-1.my-1.my-nav2
+                hr.my-1
+                nav.nav.d-flex
+                    a.p-2.link-secondary(href='#') 랭킹
+                    a.p-2.link-secondary(href='#') 리뷰
+                    a.p-2.link-secondary(href='#') 추천
+                    a.p-2.link-secondary(href='#') 웹툰 찾기
+                    a.p-2.link-secondary(href='#') 커뮤니티
+                hr.my-1
+            main
+                block content
+            include partials/footer.pug
 
