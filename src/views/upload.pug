@@ -4,6 +4,8 @@ include mixins/keywordbox
 block content 
     if errorMessage
         span=errorMessage
+    
+    link(rel="stylesheet" href="https://unpkg.com/mvp.css")
     form(method="POST", enctype="multipart/form-data")
         |제목
         input(id="title", name="title", type="text", required)

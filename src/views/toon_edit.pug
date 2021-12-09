@@ -3,6 +3,7 @@ include mixins/keywordbox
 
 block content
     h1 Edit webtoon's infomation
+    link(rel="stylesheet" href="https://unpkg.com/mvp.css")
     form(method="POST", enctype="multipart/form-data") 
         |제목
         input(name="title", value=toon.title, required)

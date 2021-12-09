@@ -29,7 +29,7 @@ export const postJoinMembership = async (req, res) => {
     })
     return res.redirect('/login')
   } catch (error) {
-    return rea.status(400).render('joinMembership', {
+    return res.status(400).render('joinMembership', {
       pageTitle,
       errorMessage: 'This username/email is already taken.',
     })
